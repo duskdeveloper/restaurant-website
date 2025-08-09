@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Johnson - Full Stack Developer | Professional Portfolio</title>
+    <meta name="description" content="Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio of projects and get in touch for your next development needs.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Alex Johnson - Full Stack Developer Portfolio">
+    <meta property="og:description" content="Professional portfolio showcasing full stack development projects with React, Node.js, and modern web technologies.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5CF6',
+                        secondary: '#A855F7'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px); 
+            }
+            50% { 
+                transform: translateY(-10px); 
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .modal {
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold text-primary">AJ</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-200">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-200">About</a>
+                        <a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-200">Skills</a>
+                        <a href="#projects" class="text-gray-700 hover:text-primary transition-colors duration-200">Projects</a>
+                        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-200">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-700 hover:text-primary" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary" onclick="toggleMobileMenu()">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary" onclick="toggleMobileMenu()">About</a>
+                <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-primary" onclick="toggleMobileMenu()">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-primary" onclick="toggleMobileMenu()">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary" onclick="toggleMobileMenu()">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-16 min-h-screen flex items-center bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="animate-fade-in-up">
+                        <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                            Hi, I'm <span class="text-primary">Alex Johnson</span>
+                        </h1>
+                        <p class="text-xl lg:text-2xl text-gray-600 mt-4">Full Stack Developer</p>
+                    </div>
+                    
+                    <div class="animate-fade-in-up" style="animation-delay: 0.2s">
+                        <p class="text-lg text-gray-600 leading-relaxed max-w-xl">
+                            I create exceptional digital experiences through clean code and thoughtful design. 
+                            Passionate about building scalable web applications that make a difference.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style="animation-delay: 0.4s">
+                        <a href="#projects" class="bg-primary hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-center">
+                            View My Work
+                        </a>
+                        <button onclick="alert('Resume download would be implemented here')" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-200">
+                            Download Resume
+                        </button>
+                    </div>
+                    
+                    <div class="flex space-x-6 animate-fade-in-up" style="animation-delay: 0.6s">
+                        <a href="#" class="text-gray-600 hover:text-primary text-xl transition-colors duration-200">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary text-xl transition-colors duration-200">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary text-xl transition-colors duration-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-primary text-xl transition-colors duration-200">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:justify-self-end animate-fade-in-up" style="animation-delay: 0.3s">
+                    <div class="relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=600" 
+                            alt="Alex Johnson - Full Stack Developer" 
+                            class="rounded-2xl shadow-2xl w-full max-w-md mx-auto animate-float"
+                        />
+                        <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-xl">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                <span class="text-sm font-medium text-gray-700">Available for work</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Get to know me better and discover what drives my passion for development
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="space-y-6">
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            With over 5 years of experience in full-stack development, I specialize in creating 
+                            robust web applications using modern technologies. My journey began with a computer 
+                            science degree and has evolved through various challenging projects across different industries.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            I'm passionate about clean code, user experience, and continuous learning. When I'm not 
+                            coding, you'll find me contributing to open source projects, mentoring junior developers, 
+                            or exploring the latest tech trends.
+                        </p>
+                        <div class="grid grid-cols-2 gap-8 pt-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary">50+</div>
+                                <div class="text-gray-600 font-medium">Projects Completed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-primary">5+</div>
+                                <div class="text-gray-600 font-medium">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                        alt="Modern developer workspace" 
+                        class="rounded-2xl shadow-lg w-full h-auto"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Skills & Technologies</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Here are the technologies I work with to bring ideas to life
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center group hover:scale-105">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-yellow-500">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">JavaScript</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center group hover:scale-105">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-blue-500">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">React</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center group hover:scale-105">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-green-500">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Node.js</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center group hover:scale-105">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-blue-600">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Python</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center group hover:scale-105">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-purple-600">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">MongoDB</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-purple-600 h-2 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center group hover:scale-105">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-orange-500">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">AWS</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-orange-500 h-2 rounded-full" style="width: 65%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center group hover:scale-105">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-blue-400">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Docker</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-400 h-2 rounded-full" style="width: 68%"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 text-center group hover:scale-105">
+                    <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-red-500">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Git</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-red-500 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Here are some of the projects I've worked on that showcase my skills and expertise
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <img 
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                        alt="E-Commerce Platform" 
+                        class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Node.js</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button onclick="openProjectModal(1)" class="text-primary hover:text-purple-700 font-medium transition-colors duration-200">
+                                <i class="fas fa-external-link-alt mr-2"></i>View Details
+                            </button>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-200">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <img 
+                        src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                        alt="Task Management App" 
+                        class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Task Management App</h3>
+                        <p class="text-gray-600 mb-4">A collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">React</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Firebase</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Socket.io</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button onclick="openProjectModal(2)" class="text-primary hover:text-purple-700 font-medium transition-colors duration-200">
+                                <i class="fas fa-external-link-alt mr-2"></i>View Details
+                            </button>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-200">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                    <img 
+                        src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                        alt="Weather Analytics Dashboard" 
+                        class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Weather Analytics Dashboard</h3>
+                        <p class="text-gray-600 mb-4">A comprehensive weather application with detailed analytics, forecasts, and interactive maps using modern web technologies.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Vue.js</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">API Integration</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Chart.js</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button onclick="openProjectModal(3)" class="text-primary hover:text-purple-700 font-medium transition-colors duration-200">
+                                <i class="fas fa-external-link-alt mr-2"></i>View Details
+                            </button>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-200">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg font-medium transition-all duration-200">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-gray-50 to-indigo-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Ready to start your next project? Let's discuss how we can work together
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary text-white p-3 rounded-lg">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-1">Email</h3>
+                                <p class="text-gray-600">alex.johnson@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary text-white p-3 rounded-lg">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-1">Phone</h3>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary text-white p-3 rounded-lg">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-1">Location</h3>
+                                <p class="text-gray-600">San Francisco, CA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <h3 class="font-semibold text-gray-900 mb-4">Follow Me</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white p-3 rounded-lg shadow-sm hover:shadow-md text-gray-600 hover:text-primary transition-all duration-200">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="#" class="bg-white p-3 rounded-lg shadow-sm hover:shadow-md text-gray-600 hover:text-primary transition-all duration-200">
+                                    <i class="fab fa-linkedin text-xl"></i>
+                                </a>
+                                <a href="#" class="bg-white p-3 rounded-lg shadow-sm hover:shadow-md text-gray-600 hover:text-primary transition-all duration-200">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form onsubmit="handleContactForm(event)" class="bg-white rounded-2xl shadow-lg p-8">
+                        <div class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200" placeholder="Your Name">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200" placeholder="your.email@example.com">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200" placeholder="Project Discussion">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200" placeholder="Tell me about your project..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-purple-700 text-white py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                                Send Message
+                                <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">Alex Johnson</div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Full Stack Developer passionate about creating exceptional digital experiences.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-200">About</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-200">Skills</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-200">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition-colors duration-200">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition-colors duration-200">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition-colors duration-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-xl transition-colors duration-200">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">© 2024 Alex Johnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 modal hidden">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 id="modal-title" class="text-3xl font-bold text-gray-900"></h2>
+                    <button onclick="closeProjectModal()" class="text-gray-400 hover:text-gray-600 text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="space-y-6">
+                    <img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-lg">
+                    
+                    <p id="modal-description" class="text-gray-600 leading-relaxed"></p>
+                    
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Technologies Used</h3>
+                        <div id="modal-technologies" class="flex flex-wrap gap-2"></div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Key Features</h3>
+                        <ul id="modal-features" class="list-disc list-inside space-y-1 text-gray-600"></ul>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <a id="modal-demo" href="#" class="bg-primary hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200" target="_blank" rel="noopener noreferrer">
+                            Live Demo
+                        </a>
+                        <a id="modal-github" href="#" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-200" target="_blank" rel="noopener noreferrer">
+                            View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Project data
+        const projects = {
+            1: {
+                title: "E-Commerce Platform",
+                image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+                description: "A comprehensive e-commerce solution with modern features including user authentication, payment processing with Stripe, real-time inventory management, and a powerful admin dashboard for managing products and orders.",
+                technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
+                features: ["User Authentication", "Payment Processing", "Admin Dashboard", "Real-time Updates", "Inventory Management"],
+                demo: "https://example.com",
+                github: "https://github.com/example"
+            },
+            2: {
+                title: "Task Management App",
+                image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+                description: "A powerful task management application that enables teams to collaborate effectively with real-time updates, intuitive drag-and-drop interfaces, and comprehensive project tracking.",
+                technologies: ["React", "Firebase", "Socket.io", "Material-UI"],
+                features: ["Real-time Collaboration", "Drag & Drop", "Team Management", "File Sharing", "Time Tracking"],
+                demo: "https://example.com",
+                github: "https://github.com/example"
+            },
+            3: {
+                title: "Weather Analytics Dashboard",
+                image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+                description: "An advanced weather analytics platform featuring detailed meteorological data, interactive maps, historical weather patterns, and predictive analytics for weather forecasting.",
+                technologies: ["Vue.js", "D3.js", "Chart.js", "OpenWeatherMap API"],
+                features: ["Interactive Maps", "Historical Data", "Weather Alerts", "Data Visualization", "API Integration"],
+                demo: "https://example.com",
+                github: "https://github.com/example"
+            }
+        };
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Project modal functions
+        function openProjectModal(projectId) {
+            const project = projects[projectId];
+            if (!project) return;
+
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-image').src = project.image;
+            document.getElementById('modal-image').alt = project.title;
+            document.getElementById('modal-description').textContent = project.description;
+            document.getElementById('modal-demo').href = project.demo;
+            document.getElementById('modal-github').href = project.github;
+
+            // Update technologies
+            const techContainer = document.getElementById('modal-technologies');
+            techContainer.innerHTML = '';
+            project.technologies.forEach(tech => {
+                const span = document.createElement('span');
+                span.className = 'px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full';
+                span.textContent = tech;
+                techContainer.appendChild(span);
+            });
+
+            // Update features
+            const featuresContainer = document.getElementById('modal-features');
+            featuresContainer.innerHTML = '';
+            project.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresContainer.appendChild(li);
+            });
+
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        // Contact form handler
+        function handleContactForm(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your server
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            event.target.reset();
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('project-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>
